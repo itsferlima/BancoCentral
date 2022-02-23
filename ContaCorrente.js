@@ -1,6 +1,6 @@
-class ContaCorrente{
+export class ContaCorrente{
     agencia;
-    saldo;
+    cliente;
 
     sacar(valor){
         if(this.saldo >= valor){
@@ -15,4 +15,10 @@ class ContaCorrente{
         }
             this.saldo+=valor;
         }
+
+    transferir(valor, conta){
+        conta.cidade= "sao paulo";
+        const valorSacado = this.sacar(valor);
+        conta.depositar(valorSacado);
     }
+}
